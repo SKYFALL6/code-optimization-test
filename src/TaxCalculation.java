@@ -1,11 +1,19 @@
 public class TaxCalculation {
     public static void main(String[] args) {
-        double productPrice1 = 100;
-        double productPrice2 = 200;
-        double tax1 = productPrice1 * 0.15;
-        double tax2 = productPrice2 * 0.10;
-        double totalTax = tax1 + tax2;
-        
+        // matriz de precios de productos
+        double[] productPrices = {100, 200}; 
+        // matriz de tasas de impuestos
+        double[] taxRates = {0.15, 0.10}; 
+
+        double totalTax = 0;
+
+        // Bucle para calcular el impuesto total
+        for (int i = 0; i < productPrices.length; i++) {
+            double tax = productPrices[i] * taxRates[i];
+            totalTax += tax;
+        }
+
+        // para determinar si el impuesto total es alto o bajo
         if (totalTax > 50) {
             System.out.println("High total tax: " + totalTax);
         } else {
@@ -13,3 +21,4 @@ public class TaxCalculation {
         }
     }
 }
+
